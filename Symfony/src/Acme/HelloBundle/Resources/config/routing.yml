@@ -1,0 +1,24 @@
+acme_hello_show:
+    pattern:  /show/{page}
+    defaults: { _controller: AcmeHelloBundle:Default:show, page: 1 }
+    requirements:
+        page: \d+
+acme_hello_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: AcmeHelloBundle:Default:delete }
+    requirements:
+        id: \d+
+acme_hello_add:
+    pattern:  /add
+    defaults: { _controller: AcmeHelloBundle:Default:add }
+    requirements:
+        _method: POST
+acme_hello_edit:
+    pattern:  /edit/{id}
+    defaults: { _controller: AcmeHelloBundle:Default:edit }
+    requirements:
+        id: \d+
+        _method: POST
+
+
+

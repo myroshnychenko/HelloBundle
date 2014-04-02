@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} List of products {% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+        <table id="main-table" class="table table-bordered table-striped table-hover">
+        <thead>
+            <th><a id="add_product_btn" class="btn">Add product</a></th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+        {% for product in products %}
+        <tr>
+            <td><a id="delete{{ product.id }}" class="btn delete">Delete</a>
+                <a id="edit{{ product.id }}" class="btn edit">Edit</a>
+            </td>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.description }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+        <div id="add_block">
+            <form action="javascript:void(null);" id="add_product_form" method="post" class="add" {{ form_enctype(form) }}>
+                {{ form_widget(form) }}
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+

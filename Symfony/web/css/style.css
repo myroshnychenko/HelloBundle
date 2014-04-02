@@ -1,0 +1,12 @@
+#main-table thead{
+    background: #777;
+    color: #e0e0e0;
+}
+
+#main-table thead tr :first-child{
+    background: #ccc;
+}
+
+#add_block{
+    display: none;
+}
